@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Image Carousel */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-img {
+            width: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Product Card Hover Effect */
+        .product-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Product Card Details */
+        .product-details:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: #1d4ed8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-4 shadow-lg fixed w-full top-0 left-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold hover:text-yellow-300">Store</a>
+            <div class="flex space-x-6">
+                <a href="#products" class="hover:text-yellow-300">Products</a>
+                <a href="#contact" class="hover:text-yellow-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="mt-20 md:mt-24 p-6">
+
+        <!-- Product Listing Section -->
+        <section id="products" class="py-12">
+            <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
+                    <div class="carousel-container mb-4">
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 1" class="carousel-img">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 2" class="carousel-img">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 3" class="carousel-img">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Product 1</h3>
+                    <p class="text-gray-600 mb-4">High-quality product with amazing features. Designed to improve your everyday life.</p>
+                    <p class="text-lg font-semibold text-gray-800">$99.99</p>
+                    <div class="mt-4">
+                        <a href="#product-details" class="product-details text-blue-600">View Details</a>
+                    </div>
+                    <button class="btn-primary mt-4">Add to Cart</button>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
+                    <div class="carousel-container mb-4">
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 4" class="carousel-img">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 5" class="carousel-img">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 6" class="carousel-img">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Product 2</h3>
+                    <p class="text-gray-600 mb-4">Sleek design with modern technology for ultimate performance.</p>
+                    <p class="text-lg font-semibold text-gray-800">$129.99</p>
+                    <div class="mt-4">
+                        <a href="#product-details" class="product-details text-blue-600">View Details</a>
+                    </div>
+                    <button class="btn-primary mt-4">Add to Cart</button>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
+                    <div class="carousel-container mb-4">
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 7" class="carousel-img">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 8" class="carousel-img">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 9" class="carousel-img">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Product 3</h3>
+                    <p class="text-gray-600 mb-4">Affordable yet powerful, with all the features you need.</p>
+                    <p class="text-lg font-semibold text-gray-800">$79.99</p>
+                    <div class="mt-4">
+                        <a href="#product-details" class="product-details text-blue-600">View Details</a>
+                    </div>
+                    <button class="btn-primary mt-4">Add to Cart</button>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
+                    <div class="carousel-container mb-4">
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 10" class="carousel-img">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 11" class="carousel-img">
+                            <img src="https://via.placeholder.com/300" alt="Product Image 12" class="carousel-img">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Product 4</h3>
+                    <p class="text-gray-600 mb-4">Built to last, with premium quality materials and advanced technology.</p>
+                    <p class="text-lg font-semibold text-gray-800">$149.99</p>
+                    <div class="mt-4">
+                        <a href="#product-details" class="product-details text-blue-600">View Details</a>
+                    </div>
+                    <button class="btn-primary mt-4">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12">
+            <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Contact Us</h2>
+            <p class="text-lg text-center text-gray-600">Have questions? Get in touch with us for more details on our products and services.</p>
+        </section>
+
+    </div>
+
+    <script>
+        // Carousel functionality
+        const carouselSlides = document.querySelectorAll('.carousel-slide');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselSlides.length;
+            carouselSlides.forEach(slide => {
+                slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+            });
+        }, 3000);
+    </script>
+</body>
+</html>

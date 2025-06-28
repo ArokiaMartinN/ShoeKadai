@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Product Details Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Remove zoom effect */
+    .zoomed-img {
+      cursor: default;
+    }
+
+    /* Image sliding effect */
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 300px; /* Fixed height for the images */
+      overflow: hidden;
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%; /* Ensure images fit the frame */
+      object-fit: cover;
+    }
+
+    /* Dots Navigation Styles */
+    .dots-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #717171;
+    }
+
+    /* Popup and Button Styling */
+    .animate-pop {
+      animation: pop 0.3s ease-in-out forwards;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans leading-relaxed tracking-normal">
+  <!-- Container -->
+  <div class="container mx-auto p-6">
+    <!-- Product Page Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-gray-800 mb-2">Product Details</h1>
+      <p class="text-gray-600">Explore the full details of the product, with additional info and interactive features.</p>
+    </header>
+
+    <!-- Product Card -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-6 transition-all transform hover:-translate-y-1">
+      <!-- Product Image and Details -->
+      <div class="md:flex">
+        <div class="md:w-1/3 relative">
+          <!-- Image Carousel -->
+          <div id="carousel" class="carousel relative">
+            <div class="carousel-images">
+              <img src="1.jpg" alt="Product Image 1" class="carousel-img">
+              <img src="2.jpg" alt="Product Image 2" class="carousel-img">
+              <img src="3.jpg" alt="Product Image 3" class="carousel-img">
+              <img src="4.jpg" alt="Product Image 4" class="carousel-img">
+            </div>
+          </div>
+          <!-- Dots Navigation -->
+          <div id="dotsContainer" class="dots-container">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+          </div>
+        </div>
+        <div class="md:w-2/3 p-8">
+          <h2 class="text-4xl font-semibold mb-3">Product Name</h2>
+          <p class="text-lg text-gray-600 mb-6">Detailed product description goes here. It provides insight into what the product offers and why it's a great choice.</p>
+          <div class="text-3xl font-bold text-red-600 mb-4">$199.99</div>
+
+          <!-- Add to Cart Button with Popup -->
+          <button id="addToCartBtn" class="bg-blue-600 text-white py-2 px-5 rounded-lg hover:bg-blue-700 focus:outline-none">
+            Add to Cart
+          </button>
+          
+          <!-- Popup Modal for Add to Cart Confirmation -->
+          <div id="cartPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full animate-pop">
+              <h3 class="text-xl font-semibold mb-4">Added to Cart</h3>
+              <p class="text-gray-700">Your product has been successfully added to the cart.</p>
+              <button id="closePopupBtn" class="mt-4 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 focus:outline-none">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Features -->
+      <div class="p-8 border-t border-gray-200">
+        <h3 class="text-2xl font-semibold">Features</h3>
+        <ul class="list-disc list-inside text-gray-700 mt-3 space-y-2">
+          <li>Premium materials ensure longevity.</li>
+          <li>Advanced functionality with intuitive controls.</li>
+          <li>Rechargeable battery with long-lasting power.</li>
+          <li>Available in various colors to match your style.</li>
+        </ul>
+      </div>
+
+      <!-- Product Description and Specifications -->
+      <div class="p-8 border-t border-gray-200">
+        <h3 class="text-2xl font-semibold mt-8">Product Description</h3>
+        <p class="text-gray-700 mt-4">
+          This product offers a blend of premium quality and innovative technology, making it a perfect choice for users who value both performance and aesthetics. Ideal for a wide range of uses, the product combines functionality with style.
+        </p>
+
+        <!-- Specifications Section -->
+        <h3 class="text-2xl font-semibold mt-8">Specifications</h3>
+        <table class="table-auto w-full text-left text-gray-700 mt-4 spec-table">
+          <tbody>
+            <tr>
+              <th class="font-semibold py-2">Brand:</th>
+              <td>Brand Name</td>
+            </tr>
+            <tr>
+              <th class="font-semibold py-2">Manufacturer:</th>
+              <td>Manufacturing Company</td>
+            </tr>
+            <tr>
+              <th class="font-semibold py-2">Model:</th>
+              <td>Model Number</td>
+            </tr>
+            <tr>
+              <th class="font-semibold py-2">Warranty:</th>
+              <td>1 Year</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Customer Reviews Section -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden p-8 mb-6">
+      <h3 class="text-2xl font-semibold mb-6">Customer Reviews</h3>
+      <div class="space-y-6">
+        <!-- Single Review -->
+        <div class="p-6 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+          <p class="font-bold text-lg">John Doe</p>
+          <p class="text-yellow-500">★★★★★</p>
+          <p class="text-gray-700 mt-3">Excellent product, highly recommend to anyone looking for quality and durability!</p>
+        </div>
+
+        <!-- More reviews as needed -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-8 bg-gray-200 mt-8">
+    <p class="text-gray-600">&copy; 2024 Your Company. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Popup Modal and Image Carousel -->
+  <script>
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const cartPopup = document.getElementById('cartPopup');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+    const carouselImages = document.querySelector('.carousel-images');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const dots = dotsContainer.querySelectorAll('.dot');
+    let imageIndex = 0;
+
+    // Show the popup modal when the "Add to Cart" button is clicked
+    addToCartBtn.addEventListener('click', () => {
+      cartPopup.classList.remove('opacity-0', 'pointer-events-none');
+      cartPopup.classList.add('opacity-100', 'pointer-events-auto');
+    });
+
+    // Close the popup modal when the "Close" button is clicked
+    closePopupBtn.addEventListener('click', () => {
+      cartPopup.classList.remove('opacity-100', 'pointer-events-auto');
+      cartPopup.classList.add('opacity-0', 'pointer-events-none');
+    });
+
+    // Change image on dot click
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        imageIndex = parseInt(e.target.dataset.index);
+        changeImage(imageIndex);
+      });
+    });
+
+    // Function to change image based on index
+    function changeImage(index) {
+      const images = carouselImages.querySelectorAll('img');
+      const offset = -index * 100;
+      carouselImages.style.transform = `translateX(${offset}%)`;
+      updateDots(index);
+    }
+
+    // Update active state of dots
+    function updateDots(index) {
+      dots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+      dots[index].classList.add('active');
+    }
+
+    // Initial setup: Show first image
+    changeImage(imageIndex);
+  </script>
+</body>
+</html>

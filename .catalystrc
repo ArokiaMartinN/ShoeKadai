@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "11276000000007618",
+      "name": "ShoeKadai",
+      "domain": {
+        "id": "50023787133",
+        "name": "shoekadai-60034642328.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60034642328",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}

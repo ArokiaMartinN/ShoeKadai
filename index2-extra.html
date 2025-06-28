@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Keyframe Animations */
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            80% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeSlide {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+        .fade-slide {
+            animation: fadeSlide 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 flex justify-between items-center">
+        <a href="home.html" class="text-white font-bold text-xl">ShopLogo</a>
+        <div class="space-x-4">
+            <a href="home.html" class="text-white hover:underline">Home</a>
+            <a href="products.html" class="text-white hover:underline">Products</a>
+            <a href="contact.html" class="text-white hover:underline">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Product Display -->
+    <div class="max-w-md mx-auto mt-8 bg-white shadow-lg rounded-lg overflow-hidden fade-slide">
+        <!-- Product Image -->
+        <div class="relative">
+            <img src="product-image.jpg" alt="Product Image" class="w-full h-64 object-cover transform hover:scale-105 transition duration-500">
+        </div>
+        
+        <!-- Product Information -->
+        <div class="p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 bounce-in">Trendy Running Shoes</h2>
+            <p class="text-gray-600 mt-2">Colour: White</p>
+
+            <!-- Size Selector -->
+            <div class="mt-4">
+                <h3 class="text-gray-700 font-medium">Size</h3>
+                <div class="flex space-x-2 mt-2">
+                    <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded hover:bg-gray-200 transition">7 UK</button>
+                    <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded bg-gray-200">8 UK</button>
+                    <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded hover:bg-gray-200 transition">10 UK</button>
+                </div>
+            </div>
+
+            <!-- Price -->
+            <div class="mt-4 flex items-center">
+                <span class="text-lg font-bold text-green-600">₹299.00</span>
+                <span class="text-gray-500 line-through ml-2">₹999.00</span>
+            </div>
+
+            <!-- Delivery Information -->
+            <div class="mt-4">
+                <p class="text-green-600 font-semibold">FREE delivery Friday, 15 November</p>
+                <p class="text-gray-500 text-sm">Order within 20 hrs 49 mins</p>
+            </div>
+
+            <!-- Product Details -->
+            <div class="mt-4">
+                <h3 class="text-gray-700 font-medium">Product Details</h3>
+                <ul class="text-gray-600 mt-2 space-y-1">
+                    <li><strong>Closure type:</strong> Lace-Up</li>
+                    <li><strong>Heel type:</strong> Flat</li>
+                    <li><strong>Water resistance level:</strong> Not Water Resistant</li>
+                </ul>
+            </div>
+
+            <!-- Add to Cart Button with Pop-up -->
+            <div class="mt-6">
+                <button onclick="showPopup()" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-500 transition duration-300">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-xs text-center">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Item Added to Cart!</h3>
+            <p class="text-gray-600">Your item has been added to the cart successfully.</p>
+            <button onclick="closePopup()" class="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-400 transition">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Pop-up -->
+    <script>
+        function showPopup() {
+            document.getElementById('popup').classList.remove('hidden');
+        }
+        function closePopup() {
+            document.getElementById('popup').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
