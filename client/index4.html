@@ -1,0 +1,151 @@
+<html>
+<head>
+    <title>Online Fashion & Footwear Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .carousel-item {
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item.hidden {
+            display: none;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-black text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center">
+                <img src="https://storage.googleapis.com/a1aa/image/VU0Rls2gxewIB6eMRMX1u5CbvXCIc3Kw6JetzeNdDFfkG9e7E.jpg" alt="Tata CLiQ Logo" class="h-10">
+                <nav class="ml-6">
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="hover:underline">Tata CLiQ Luxury</a></li>
+                        <li><a href="#" class="hover:underline">Categories</a></li>
+                        <li><a href="#" class="hover:underline">Brands</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:underline">CLiQ Cash</a>
+                <a href="#" class="hover:underline">Gift Card</a>
+                <a href="#" class="hover:underline">CLiQ Care</a>
+                <a href="#" class="hover:underline">Track Orders</a>
+                <a href="#" class="hover:underline">Sign in / Sign Up</a>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-6">
+        <!-- Banner -->
+        <div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <img src="https://storage.googleapis.com/a1aa/image/SGwXS2JeApw9aaSVocQwPLNRR26lg3QDJ6ySdvqejlzoo3vTA.jpg" alt="Shoes Banner" class="w-full h-96 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-transparent opacity-75"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center items-start p-6 text-white">
+                        <h2 class="text-4xl font-bold">30% - 70% OFF</h2>
+                        <p class="mt-2 text-lg">Iconic shoes designed for performance</p>
+                        <button class="mt-4 bg-white text-black px-4 py-2 rounded-full">SHOP NOW</button>
+                    </div>
+                </div>
+                <!-- Add more carousel items here if needed -->
+            </div>
+            <div class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2 cursor-pointer" onclick="prevSlide()">
+                <i class="fas fa-chevron-left text-gray-800"></i>
+            </div>
+            <div class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2 cursor-pointer" onclick="nextSlide()">
+                <i class="fas fa-chevron-right text-gray-800"></i>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="mt-6 grid grid-cols-8 gap-4">
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/btvu0A14tYrzKNOaNZsygBxvwowufLJPODHfweZOTlKNRvfOB.jpg" alt="Westside" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">WESTSIDE</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/KhO0F5DwmnL3A11If1uZgnFKuF6k2YzJsSlS2aDsygyV073JA.jpg" alt="Womenswear" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">WOMENSWEAR</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/M0oLOjOpimbxNFccb9NHnUvBEv0OfuGZC1Gw8sTo1lGZ073JA.jpg" alt="Menswear" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">MENSWEAR</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/u9fVFcHDRM3FXiWcfxIp6iHSzUjJ3EyfkOhiXwvZyvXeiee7E.jpg" alt="Handbags" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">HANDBAGS</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/6etn6r2I4DyAL6SYxO9jUeD5riO2xIdTzhI5T6iCfdCPRvfOB.jpg" alt="Watches" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">WATCHES</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/N0Goz2Zz2iJhFtxLASJEBLQ5nDG7m4EUwamdkgf15qepo3vTA.jpg" alt="Footwear" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">FOOTWEAR</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/4vd52fe50FtLKUJYIVakSaINcY1JzkC7QOYcwQjTke9GRvfOB.jpg" alt="Kidswear" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">KIDSWEAR</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/iDJukSlWlsYYMxpkEN1C1lAq8hvyrDwIzpiXrEszlSeW073JA.jpg" alt="Jewellery" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">JEWELLERY</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/Zw7EBuhEGW4rFNhWUHV6fzhqL6k7vhKwWyLunomqfIRlo3vTA.jpg" alt="Beauty" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">BEAUTY</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/wymiFwYafg3rNaSNBAp9MEumaQsUhzprw17Kk0ojRwcW073JA.jpg" alt="Homes & Living" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">HOMES & LIVING</span>
+            </div>
+            <div class="flex flex-col items-center transform transition-transform hover:scale-105">
+                <img src="https://storage.googleapis.com/a1aa/image/J3emU3BOAiTfA0m6I0atw3tOvLUeZ9POE7JehW5jWbfHG9e7E.jpg" alt="Gadgets" class="rounded-full h-24 w-24">
+                <span class="mt-2 text-sm">GADGETS</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                slide.classList.add('hidden');
+                if (i === index) {
+                    slide.classList.add('active');
+                    slide.classList.remove('hidden');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
